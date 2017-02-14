@@ -5,8 +5,8 @@ module AtomModel
     let!(:attachement) {
       c = Category.new(name: '附件')
       c.features = {
-        file_size: { label: '文件大小', type: 'Integer', required: true },
-        file_type: { label: '文件类型', type: 'String', required: true }
+        file_size: { label: '文件大小', type: 'Integer', validates: { presence: true } },
+        file_type: { label: '文件类型', type: 'String', validates: { presence: true } }
       }
       c.save
       c

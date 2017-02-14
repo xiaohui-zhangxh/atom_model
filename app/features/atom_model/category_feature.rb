@@ -12,7 +12,7 @@ module AtomModel
   class CategoryFeatureValidator < ActiveModel::EachValidator
     attr_reader :category
     def validate_each(record, attribute, value)
-      @category ||= Category.find_by(name: options[:category])
+      @category ||= Category.find_by(name: options[:parent_options][:category])
       klass = Feature.mount(features: category.features)
       inst = begin
         klass.new(value)
