@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213053007) do
+ActiveRecord::Schema.define(version: 20170213055850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20170213053007) do
     t.jsonb    "options"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "atom_model_elements", force: :cascade do |t|
+    t.integer  "category_id"
+    t.jsonb    "feature_values"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["category_id"], name: "index_atom_model_elements_on_category_id", using: :btree
   end
 
 end

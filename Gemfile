@@ -15,3 +15,6 @@ gemspec
 
 gem "rspec-rails"
 gem "factory_girl_rails"
+gem "pry-rails"
+gem "guard-bundler"
+gem "guard-rspec"

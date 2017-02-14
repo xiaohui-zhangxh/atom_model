@@ -1,3 +1,4 @@
+ENV['RAILS_ENV'] ||= 'test'
 # Load the Rails application.
 require_relative 'application'
 
